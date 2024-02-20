@@ -5,3 +5,9 @@
     <label for=<%= task.title%>><%= link_to task.title, task_path(task)%></label>
   </div>
 <% end %>
+
+<div>------------------------------------</div>
+
+<div class="new-task">
+  <%= link_to "+ Add a new task", new_task_path %>
+</div>

@@ -7,4 +7,19 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
   end
+
+  def new
+    @task = Task.new
+  end
+
+  def create
+    @task = Task.create(task_params)
+  end
+
+  private
+
+  def task_params
+    # strong params(manually & specifically permit parameters)
+    params.require(:task).permit(:title, :details, :completed)
+  end
 end

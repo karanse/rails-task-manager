@@ -8,8 +8,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # GET http://localhost:3000/tasks/new
+  get "tasks/new", to: "tasks#new", as: "new_task"
+
+  # POST http://localhost:3000/tasks/
+  post "tasks", to: "tasks#create"
+
   get "tasks", to: "tasks#index"
 
   # GET http://localhost:3000/tasks/1
   get "tasks/:id", to: "tasks#show", as: "task"
+
+
 end
