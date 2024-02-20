@@ -12,12 +12,20 @@ Rails.application.routes.draw do
   get "tasks/new", to: "tasks#new", as: "new_task"
 
   # POST http://localhost:3000/tasks/
-  post "tasks", to: "tasks#create"
+  post "/tasks", to: "tasks#create"
 
-  get "tasks", to: "tasks#index"
+  # GET http://localhost:3000/tasks
+  get "/tasks", to: "tasks#index"
 
   # GET http://localhost:3000/tasks/1
   get "tasks/:id", to: "tasks#show", as: "task"
 
+  # GET http://localhost:3000/tasks/1/edit
+  get "tasks/:id/edit", to: "tasks#edit", as: "edit_task"
 
+   # PATCH http://localhost:3000/tasks/1/
+   patch "tasks/:id", to: "tasks#update"
+
+   # DELETE http://localhost:3000/tasks/1/
+   delete "tasks/:id", to: "tasks#destroy"
 end
