@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "tasks", to: "tasks#index"
+
+  # GET http://localhost:3000/tasks/1
+  get "tasks/:id", to: "tasks#show", as: "task"
 end
